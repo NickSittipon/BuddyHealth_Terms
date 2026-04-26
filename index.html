@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ข้อกำหนดและเงื่อนไขการใช้งาน – BuddyHealth</title>
+    <title>BuddyHealth – Terms</title>
     <style>
       :root {
         color-scheme: light dark;
@@ -47,6 +47,32 @@
         border-radius: 14px;
         padding: 18px 18px 14px;
         margin-bottom: 20px;
+      }
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+      .lang {
+        display: inline-flex;
+        gap: 8px;
+      }
+      .btn {
+        appearance: none;
+        border: 1px solid var(--border);
+        background: transparent;
+        color: var(--fg);
+        border-radius: 10px;
+        padding: 8px 10px;
+        font: inherit;
+        line-height: 1;
+        cursor: pointer;
+      }
+      .btn[aria-pressed="true"] {
+        background: color-mix(in srgb, var(--card) 90%, transparent);
+        border-color: color-mix(in srgb, var(--border) 60%, var(--fg));
       }
       h1 {
         margin: 0 0 8px;
@@ -103,141 +129,316 @@
   <body>
     <main>
       <header>
-        <h1>ข้อกำหนดและเงื่อนไขการใช้งาน (Terms &amp; Conditions) – BuddyHealth (TH)</h1>
-        <p class="meta"><strong>วันที่มีผลบังคับใช้ (Effective Date):</strong> <span class="placeholder">[ใส่วันที่]</span></p>
-        <p class="meta"><strong>ผู้ให้บริการ (Provider):</strong> BuddyHealth (“เรา”, “ของเรา”)</p>
-        <p class="meta">
-          <strong>ติดต่อ (Contact):</strong> <span class="placeholder">[อีเมลติดต่อ]</span> /
-          <span class="placeholder">[ที่อยู่หรือข้อมูลติดต่ออื่น ๆ]</span>
-        </p>
+        <div class="topbar">
+          <p class="meta" id="ui-subtitle"></p>
+          <div class="lang" role="group" aria-label="Language">
+            <button class="btn" type="button" id="lang-th" aria-pressed="false">ไทย</button>
+            <button class="btn" type="button" id="lang-en" aria-pressed="false">EN</button>
+          </div>
+        </div>
+        <h1 id="doc-title"></h1>
+        <p class="meta" id="meta-effective"></p>
+        <p class="meta" id="meta-provider"></p>
+        <p class="meta" id="meta-contact"></p>
       </header>
 
-      <ol>
-        <li>
-          <h2>การยอมรับข้อกำหนด</h2>
-          <p>
-            การดาวน์โหลด เข้าถึง หรือใช้งานแอป BuddyHealth (“แอป” หรือ “บริการ”) ถือว่าคุณยอมรับข้อกำหนดและเงื่อนไขนี้
-            หากคุณไม่ยอมรับ กรุณาหยุดใช้งานแอป
-          </p>
-        </li>
-
-        <li>
-          <h2>คุณสมบัติผู้ใช้และอายุขั้นต่ำ</h2>
-          <p>คุณต้องมีอายุอย่างน้อย 13 ปี จึงจะใช้บริการได้</p>
-          <p>
-            หากคุณอายุระหว่าง 13–17 ปี คุณรับรองว่ามีความยินยอมจากผู้ปกครอง/ผู้แทนโดยชอบธรรมตามที่กฎหมายที่เกี่ยวข้องกำหนด
-          </p>
-          <p>เราอาจระงับ/ยุติการให้บริการหากพบว่ามีการใช้งานโดยผู้ที่ไม่ผ่านเกณฑ์อายุ</p>
-        </li>
-
-        <li>
-          <h2>ขอบเขตบริการและคำเตือนด้านสุขภาพ (ไม่ใช่คำแนะนำทางการแพทย์)</h2>
-          <p>
-            BuddyHealth ให้บริการเกี่ยวกับ การนับแคลอรี แผนอาหาร และการสนทนา/ข้อมูลด้านโภชนาการ เพื่อวัตถุประสงค์ด้านข้อมูลทั่วไปเท่านั้น
-          </p>
-          <p>บริการ ไม่ใช่การวินิจฉัย การรักษา คำแนะนำทางการแพทย์ หรือการดูแลโดยผู้ประกอบวิชาชีพ</p>
-          <p>
-            คุณควรปรึกษาแพทย์/ผู้เชี่ยวชาญก่อนเริ่มเปลี่ยนแปลงอาหาร/การออกกำลังกาย โดยเฉพาะหากคุณมีโรคประจำตัว ตั้งครรภ์ ให้นมบุตร
-            หรือมีภาวะสุขภาพที่ต้องเฝ้าระวัง
-          </p>
-          <p>หากมีเหตุฉุกเฉินด้านสุขภาพ ให้ติดต่อหน่วยแพทย์ฉุกเฉินทันที</p>
-        </li>
-
-        <li>
-          <h2>บัญชีผู้ใช้และความปลอดภัย</h2>
-          <p>คุณอาจต้องสร้างบัญชีเพื่อใช้งานบางส่วนของบริการ</p>
-          <p>คุณรับผิดชอบต่อความถูกต้องของข้อมูลบัญชี และการรักษาความลับของข้อมูลเข้าสู่ระบบ</p>
-          <p>คุณต้องแจ้งเราทันทีหากสงสัยว่าบัญชีถูกเข้าถึงโดยไม่ได้รับอนุญาต</p>
-        </li>
-
-        <li>
-          <h2>ข้อมูลส่วนบุคคลและความเป็นส่วนตัว</h2>
-          <p>การประมวลผลข้อมูลส่วนบุคคลของคุณอยู่ภายใต้นโยบายความเป็นส่วนตัวของเรา (“Privacy Policy”)</p>
-          <p>โดยทั่วไป เราอาจเก็บและประมวลผลข้อมูล เช่น อีเมล รูปภาพ อายุ น้ำหนัก และข้อมูลด้านสุขภาพ/โภชนาการ เพื่อให้บริการและปรับปรุงบริการ</p>
-          <p>เราใช้ผู้ให้บริการโครงสร้างพื้นฐาน/ฐานข้อมูล เช่น Supabase และเครื่องมือ analytics เพื่อวิเคราะห์การใช้งานและปรับปรุงประสบการณ์ผู้ใช้</p>
-          <p>
-            <strong>แนะนำ:</strong> ให้คุณมีหน้า/เอกสาร Privacy Policy แยกต่างหาก และอ้างอิงลิงก์ไว้ในแอป/สโตร์
-          </p>
-        </li>
-
-        <li>
-          <h2>พฤติกรรมต้องห้าม</h2>
-          <p>คุณตกลงว่าจะไม่:</p>
-          <ul>
-            <li>ใช้งานบริการเพื่อวัตถุประสงค์ที่ผิดกฎหมาย หรือฝ่าฝืนข้อกำหนดนี้</li>
-            <li>พยายามเจาะระบบ รบกวนบริการ ทำ reverse engineering หรือหลีกเลี่ยงมาตรการความปลอดภัย</li>
-            <li>ใช้งานในลักษณะที่ก่อให้เกิดความเสียหายต่อเรา ผู้ใช้รายอื่น หรือบุคคลภายนอก</li>
-          </ul>
-        </li>
-
-        <li>
-          <h2>ค่าบริการ</h2>
-          <p>ปัจจุบันบริการ ไม่มีค่าใช้จ่าย อย่างไรก็ตาม เราอาจเพิ่มฟีเจอร์แบบคิดค่าบริการในอนาคต โดยจะแจ้งให้ทราบตามสมควร</p>
-        </li>
-
-        <li>
-          <h2>ทรัพย์สินทางปัญญา</h2>
-          <p>
-            แอป ซอฟต์แวร์ เนื้อหา การออกแบบ เครื่องหมายการค้า และองค์ประกอบต่าง ๆ ของบริการเป็นทรัพย์สินของเรา (หรือผู้อนุญาตให้เราใช้)
-            คุณได้รับสิทธิใช้งานแบบส่วนบุคคล จำกัด เพิกถอนได้ และไม่โอนสิทธิ เพื่อใช้บริการตามข้อกำหนดนี้เท่านั้น
-          </p>
-        </li>
-
-        <li>
-          <h2>บริการของบุคคลที่สาม</h2>
-          <p>
-            บริการอาจพึ่งพาหรือเชื่อมโยงกับบริการของบุคคลที่สาม (เช่น Supabase, analytics) การใช้งานของคุณอาจอยู่ภายใต้เงื่อนไข/นโยบายของบุคคลที่สามนั้น ๆ
-            ด้วย เราไม่รับผิดชอบต่อบริการของบุคคลที่สามในส่วนที่อยู่นอกเหนือการควบคุมของเรา
-          </p>
-        </li>
-
-        <li>
-          <h2>การปฏิเสธความรับผิด (Disclaimer)</h2>
-          <p>บริการจัดให้ “ตามสภาพ” และ “ตามที่มี” เราไม่รับประกันว่าบริการจะถูกต้องสมบูรณ์ ปลอดข้อผิดพลาด หรือพร้อมใช้งานตลอดเวลา</p>
-          <p>ผลลัพธ์จากการนับแคลอรี/แผนอาหาร/ข้อมูลโภชนาการอาจแตกต่างกันตามแต่ละบุคคล และขึ้นกับข้อมูลที่คุณให้</p>
-        </li>
-
-        <li>
-          <h2>การจำกัดความรับผิด (Limitation of Liability)</h2>
-          <p>ในขอบเขตสูงสุดที่กฎหมายอนุญาต:</p>
-          <ul>
-            <li>
-              เราจะไม่รับผิดต่อความเสียหายทางอ้อม พิเศษ เป็นผลสืบเนื่อง หรือความเสียหายเชิงลงโทษ รวมถึงการสูญเสียกำไร ข้อมูล หรือชื่อเสียงทางธุรกิจ
-              อันเกิดจากหรือเกี่ยวข้องกับการใช้บริการ
-            </li>
-            <li>
-              ความรับผิดรวมทั้งหมดของเราที่เกิดจากหรือเกี่ยวข้องกับบริการ จะไม่เกิน จำนวนที่คุณชำระให้เราในช่วง 12 เดือนก่อนเกิดเหตุ หรือ 100 ดอลลาร์สหรัฐ (USD 100)
-              แล้วแต่จำนวนใดจะน้อยกว่า
-            </li>
-            <li>
-              <strong>ข้อยกเว้น:</strong> ไม่มีส่วนใดในข้อกำหนดนี้ที่มีเจตนาจำกัดความรับผิดในกรณีที่กฎหมายห้ามจำกัด (เช่น การกระทำโดยเจตนาทุจริตหรือความประมาทเลินเล่ออย่างร้ายแรงในบางเขตอำนาจ)
-            </li>
-          </ul>
-        </li>
-
-        <li>
-          <h2>การระงับและการยุติ</h2>
-          <p>
-            เราอาจระงับหรือยุติการเข้าถึงบริการของคุณ หากเราพิจารณาอย่างสมเหตุสมผลว่าคุณฝ่าฝืนข้อกำหนดนี้ หรือมีความเสี่ยงต่อความปลอดภัยของบริการ
-          </p>
-        </li>
-
-        <li>
-          <h2>การเปลี่ยนแปลงข้อกำหนด</h2>
-          <p>
-            เราอาจปรับปรุงข้อกำหนดนี้เป็นครั้งคราว โดยจะแจ้งให้ทราบผ่านแอปหรือช่องทางที่เหมาะสม การใช้งานต่อหลังวันที่มีผลบังคับใช้ของฉบับแก้ไข ถือว่าคุณยอมรับข้อกำหนดที่แก้ไขแล้ว
-          </p>
-        </li>
-
-        <li>
-          <h2>กฎหมายที่ใช้บังคับและเขตอำนาจ</h2>
-          <p>ข้อกำหนดนี้อยู่ภายใต้กฎหมายของประเทศไทย และให้ศาลไทยมีเขตอำนาจ เว้นแต่กฎหมายที่ใช้บังคับกำหนดเป็นอย่างอื่น</p>
-        </li>
-      </ol>
+      <ol id="terms"></ol>
 
       <footer>
-        <p>เอกสารนี้จัดทำเพื่อให้แสดงผลบนเว็บได้ชัดเจน โปรดแทนที่ข้อความในวงเล็บเหลี่ยม <span class="placeholder">[...]</span> ด้วยข้อมูลจริงก่อนเผยแพร่</p>
+        <p id="footer-note"></p>
       </footer>
     </main>
+
+    <script>
+      const STORAGE_KEY = "buddyhealth_terms_lang";
+
+      const STRINGS = {
+        th: {
+          uiSubtitle: "แสดงผลตามภาษาของเครื่อง (เปลี่ยนได้ที่ปุ่มด้านขวา)",
+          title: "ข้อกำหนดและเงื่อนไขการใช้งาน (Terms & Conditions) – BuddyHealth (TH)",
+          metaEffective:
+            '<strong>วันที่มีผลบังคับใช้ (Effective Date):</strong> <span class="placeholder">[ใส่วันที่]</span>',
+          metaProvider: '<strong>ผู้ให้บริการ (Provider):</strong> BuddyHealth (“เรา”, “ของเรา”)',
+          metaContact:
+            '<strong>ติดต่อ (Contact):</strong> <span class="placeholder">[อีเมลติดต่อ]</span> / <span class="placeholder">[ที่อยู่หรือข้อมูลติดต่ออื่น ๆ]</span>',
+          footerNote:
+            'เอกสารนี้จัดทำเพื่อให้แสดงผลบนเว็บได้ชัดเจน โปรดแทนที่ข้อความในวงเล็บเหลี่ยม <span class="placeholder">[...]</span> ด้วยข้อมูลจริงก่อนเผยแพร่',
+          sections: [
+            {
+              h: "การยอมรับข้อกำหนด",
+              p: [
+                'การดาวน์โหลด เข้าถึง หรือใช้งานแอป BuddyHealth (“แอป” หรือ “บริการ”) ถือว่าคุณยอมรับข้อกำหนดและเงื่อนไขนี้ หากคุณไม่ยอมรับ กรุณาหยุดใช้งานแอป',
+              ],
+            },
+            {
+              h: "คุณสมบัติผู้ใช้และอายุขั้นต่ำ",
+              p: [
+                "คุณต้องมีอายุอย่างน้อย 13 ปี จึงจะใช้บริการได้",
+                "หากคุณอายุระหว่าง 13–17 ปี คุณรับรองว่ามีความยินยอมจากผู้ปกครอง/ผู้แทนโดยชอบธรรมตามที่กฎหมายที่เกี่ยวข้องกำหนด",
+                "เราอาจระงับ/ยุติการให้บริการหากพบว่ามีการใช้งานโดยผู้ที่ไม่ผ่านเกณฑ์อายุ",
+              ],
+            },
+            {
+              h: "ขอบเขตบริการและคำเตือนด้านสุขภาพ (ไม่ใช่คำแนะนำทางการแพทย์)",
+              p: [
+                "BuddyHealth ให้บริการเกี่ยวกับ การนับแคลอรี แผนอาหาร และการสนทนา/ข้อมูลด้านโภชนาการ เพื่อวัตถุประสงค์ด้านข้อมูลทั่วไปเท่านั้น",
+                "บริการ ไม่ใช่การวินิจฉัย การรักษา คำแนะนำทางการแพทย์ หรือการดูแลโดยผู้ประกอบวิชาชีพ",
+                "คุณควรปรึกษาแพทย์/ผู้เชี่ยวชาญก่อนเริ่มเปลี่ยนแปลงอาหาร/การออกกำลังกาย โดยเฉพาะหากคุณมีโรคประจำตัว ตั้งครรภ์ ให้นมบุตร หรือมีภาวะสุขภาพที่ต้องเฝ้าระวัง",
+                "หากมีเหตุฉุกเฉินด้านสุขภาพ ให้ติดต่อหน่วยแพทย์ฉุกเฉินทันที",
+              ],
+            },
+            {
+              h: "บัญชีผู้ใช้และความปลอดภัย",
+              p: [
+                "คุณอาจต้องสร้างบัญชีเพื่อใช้งานบางส่วนของบริการ",
+                "คุณรับผิดชอบต่อความถูกต้องของข้อมูลบัญชี และการรักษาความลับของข้อมูลเข้าสู่ระบบ",
+                "คุณต้องแจ้งเราทันทีหากสงสัยว่าบัญชีถูกเข้าถึงโดยไม่ได้รับอนุญาต",
+              ],
+            },
+            {
+              h: "ข้อมูลส่วนบุคคลและความเป็นส่วนตัว",
+              p: [
+                'การประมวลผลข้อมูลส่วนบุคคลของคุณอยู่ภายใต้นโยบายความเป็นส่วนตัวของเรา (“Privacy Policy”)',
+                "โดยทั่วไป เราอาจเก็บและประมวลผลข้อมูล เช่น อีเมล รูปภาพ อายุ น้ำหนัก และข้อมูลด้านสุขภาพ/โภชนาการ เพื่อให้บริการและปรับปรุงบริการ",
+                "เราใช้ผู้ให้บริการโครงสร้างพื้นฐาน/ฐานข้อมูล เช่น Supabase และเครื่องมือ analytics เพื่อวิเคราะห์การใช้งานและปรับปรุงประสบการณ์ผู้ใช้",
+                "<strong>แนะนำ:</strong> ให้คุณมีหน้า/เอกสาร Privacy Policy แยกต่างหาก และอ้างอิงลิงก์ไว้ในแอป/สโตร์",
+              ],
+            },
+            {
+              h: "พฤติกรรมต้องห้าม",
+              p: ["คุณตกลงว่าจะไม่:"],
+              ul: [
+                "ใช้งานบริการเพื่อวัตถุประสงค์ที่ผิดกฎหมาย หรือฝ่าฝืนข้อกำหนดนี้",
+                "พยายามเจาะระบบ รบกวนบริการ ทำ reverse engineering หรือหลีกเลี่ยงมาตรการความปลอดภัย",
+                "ใช้งานในลักษณะที่ก่อให้เกิดความเสียหายต่อเรา ผู้ใช้รายอื่น หรือบุคคลภายนอก",
+              ],
+            },
+            {
+              h: "ค่าบริการ",
+              p: ["ปัจจุบันบริการ ไม่มีค่าใช้จ่าย อย่างไรก็ตาม เราอาจเพิ่มฟีเจอร์แบบคิดค่าบริการในอนาคต โดยจะแจ้งให้ทราบตามสมควร"],
+            },
+            {
+              h: "ทรัพย์สินทางปัญญา",
+              p: [
+                "แอป ซอฟต์แวร์ เนื้อหา การออกแบบ เครื่องหมายการค้า และองค์ประกอบต่าง ๆ ของบริการเป็นทรัพย์สินของเรา (หรือผู้อนุญาตให้เราใช้) คุณได้รับสิทธิใช้งานแบบส่วนบุคคล จำกัด เพิกถอนได้ และไม่โอนสิทธิ เพื่อใช้บริการตามข้อกำหนดนี้เท่านั้น",
+              ],
+            },
+            {
+              h: "บริการของบุคคลที่สาม",
+              p: [
+                "บริการอาจพึ่งพาหรือเชื่อมโยงกับบริการของบุคคลที่สาม (เช่น Supabase, analytics) การใช้งานของคุณอาจอยู่ภายใต้เงื่อนไข/นโยบายของบุคคลที่สามนั้น ๆ ด้วย เราไม่รับผิดชอบต่อบริการของบุคคลที่สามในส่วนที่อยู่นอกเหนือการควบคุมของเรา",
+              ],
+            },
+            {
+              h: "การปฏิเสธความรับผิด (Disclaimer)",
+              p: [
+                "บริการจัดให้ “ตามสภาพ” และ “ตามที่มี” เราไม่รับประกันว่าบริการจะถูกต้องสมบูรณ์ ปลอดข้อผิดพลาด หรือพร้อมใช้งานตลอดเวลา",
+                "ผลลัพธ์จากการนับแคลอรี/แผนอาหาร/ข้อมูลโภชนาการอาจแตกต่างกันตามแต่ละบุคคล และขึ้นกับข้อมูลที่คุณให้",
+              ],
+            },
+            {
+              h: "การจำกัดความรับผิด (Limitation of Liability)",
+              p: ["ในขอบเขตสูงสุดที่กฎหมายอนุญาต:"],
+              ul: [
+                "เราจะไม่รับผิดต่อความเสียหายทางอ้อม พิเศษ เป็นผลสืบเนื่อง หรือความเสียหายเชิงลงโทษ รวมถึงการสูญเสียกำไร ข้อมูล หรือชื่อเสียงทางธุรกิจ อันเกิดจากหรือเกี่ยวข้องกับการใช้บริการ",
+                "ความรับผิดรวมทั้งหมดของเราที่เกิดจากหรือเกี่ยวข้องกับบริการ จะไม่เกิน จำนวนที่คุณชำระให้เราในช่วง 12 เดือนก่อนเกิดเหตุ หรือ 100 ดอลลาร์สหรัฐ (USD 100) แล้วแต่จำนวนใดจะน้อยกว่า",
+                "<strong>ข้อยกเว้น:</strong> ไม่มีส่วนใดในข้อกำหนดนี้ที่มีเจตนาจำกัดความรับผิดในกรณีที่กฎหมายห้ามจำกัด (เช่น การกระทำโดยเจตนาทุจริตหรือความประมาทเลินเล่ออย่างร้ายแรงในบางเขตอำนาจ)",
+              ],
+            },
+            {
+              h: "การระงับและการยุติ",
+              p: [
+                "เราอาจระงับหรือยุติการเข้าถึงบริการของคุณ หากเราพิจารณาอย่างสมเหตุสมผลว่าคุณฝ่าฝืนข้อกำหนดนี้ หรือมีความเสี่ยงต่อความปลอดภัยของบริการ",
+              ],
+            },
+            {
+              h: "การเปลี่ยนแปลงข้อกำหนด",
+              p: [
+                "เราอาจปรับปรุงข้อกำหนดนี้เป็นครั้งคราว โดยจะแจ้งให้ทราบผ่านแอปหรือช่องทางที่เหมาะสม การใช้งานต่อหลังวันที่มีผลบังคับใช้ของฉบับแก้ไข ถือว่าคุณยอมรับข้อกำหนดที่แก้ไขแล้ว",
+              ],
+            },
+            {
+              h: "กฎหมายที่ใช้บังคับและเขตอำนาจ",
+              p: ["ข้อกำหนดนี้อยู่ภายใต้กฎหมายของประเทศไทย และให้ศาลไทยมีเขตอำนาจ เว้นแต่กฎหมายที่ใช้บังคับกำหนดเป็นอย่างอื่น"],
+            },
+          ],
+        },
+        en: {
+          uiSubtitle: "Auto-detected from your device language (you can switch on the right)",
+          title: "Terms & Conditions – BuddyHealth (EN)",
+          metaEffective:
+            '<strong>Effective Date:</strong> <span class="placeholder">[Insert date]</span>',
+          metaProvider: '<strong>Provider:</strong> BuddyHealth (“we”, “us”, “our”)',
+          metaContact:
+            '<strong>Contact:</strong> <span class="placeholder">[Contact email]</span> / <span class="placeholder">[Address or other contact details]</span>',
+          footerNote:
+            'This page is formatted for readability on the web. Please replace bracketed placeholders <span class="placeholder">[...]</span> with your actual information before publishing.',
+          sections: [
+            {
+              h: "Acceptance of Terms",
+              p: [
+                'By downloading, accessing, or using the BuddyHealth app (“App” or “Service”), you agree to these Terms & Conditions. If you do not agree, please stop using the App.',
+              ],
+            },
+            {
+              h: "Eligibility and Minimum Age",
+              p: [
+                "You must be at least 13 years old to use the Service.",
+                "If you are between 13–17 years old, you represent that you have consent from a parent/legal guardian as required by applicable law.",
+                "We may suspend or terminate access if we learn that a user does not meet the age requirement.",
+              ],
+            },
+            {
+              h: "Scope of Service and Health Disclaimer (Not Medical Advice)",
+              p: [
+                "BuddyHealth provides calorie tracking, meal planning, and nutrition-related chat/information for general informational purposes only.",
+                "The Service is not a medical diagnosis, treatment, or professional medical advice or care.",
+                "You should consult a physician or qualified professional before changing your diet or exercise plan, especially if you have underlying medical conditions, are pregnant, breastfeeding, or have health conditions requiring monitoring.",
+                "In a medical emergency, contact emergency medical services immediately.",
+              ],
+            },
+            {
+              h: "Account and Security",
+              p: [
+                "You may need to create an account to access parts of the Service.",
+                "You are responsible for keeping your account information accurate and maintaining the confidentiality of your login credentials.",
+                "Notify us promptly if you suspect unauthorized access to your account.",
+              ],
+            },
+            {
+              h: "Personal Data and Privacy",
+              p: [
+                "Our processing of your personal data is governed by our Privacy Policy.",
+                "In general, we may collect and process data such as email, photos, age, weight, and health/nutrition-related information to provide and improve the Service.",
+                "We use infrastructure/database providers such as Supabase and analytics tools to understand usage and improve the user experience.",
+                "<strong>Recommendation:</strong> Maintain a separate Privacy Policy page/document and link it in the app/store listing.",
+              ],
+            },
+            {
+              h: "Prohibited Conduct",
+              p: ["You agree not to:"],
+              ul: [
+                "Use the Service for unlawful purposes or in violation of these Terms.",
+                "Attempt to hack, disrupt, reverse engineer, or bypass security measures of the Service.",
+                "Use the Service in a way that harms us, other users, or third parties.",
+              ],
+            },
+            {
+              h: "Fees",
+              p: [
+                "The Service is currently free of charge. We may introduce paid features in the future and will provide notice as appropriate.",
+              ],
+            },
+            {
+              h: "Intellectual Property",
+              p: [
+                "The App, software, content, design, trademarks, and all elements of the Service are owned by us (or our licensors). You are granted a personal, limited, revocable, non-transferable license to use the Service only in accordance with these Terms.",
+              ],
+            },
+            {
+              h: "Third-Party Services",
+              p: [
+                "The Service may rely on or link to third-party services (e.g., Supabase, analytics). Your use may also be subject to those third parties’ terms/policies. We are not responsible for third-party services outside of our control.",
+              ],
+            },
+            {
+              h: "Disclaimer",
+              p: [
+                'The Service is provided “as is” and “as available”. We do not warrant that the Service will be accurate, complete, error-free, or uninterrupted.',
+                "Calorie tracking/meal plans/nutrition information may vary by individual and depend on the information you provide.",
+              ],
+            },
+            {
+              h: "Limitation of Liability",
+              p: ["To the maximum extent permitted by law:"],
+              ul: [
+                "We will not be liable for indirect, special, consequential, or punitive damages, including loss of profits, data, or business reputation arising out of or related to your use of the Service.",
+                "Our total aggregate liability arising out of or related to the Service will not exceed the amount you paid us in the 12 months prior to the event, or USD 100, whichever is less.",
+                "<strong>Exception:</strong> Nothing in these Terms is intended to limit liability where such limitation is prohibited by applicable law (e.g., intentional misconduct or gross negligence in some jurisdictions).",
+              ],
+            },
+            {
+              h: "Suspension and Termination",
+              p: [
+                "We may suspend or terminate your access if we reasonably determine that you have violated these Terms or that your use poses a risk to the security of the Service.",
+              ],
+            },
+            {
+              h: "Changes to These Terms",
+              p: [
+                "We may update these Terms from time to time and will notify you via the App or other appropriate channels. Continued use after the effective date of an updated version constitutes acceptance of the updated Terms.",
+              ],
+            },
+            {
+              h: "Governing Law and Jurisdiction",
+              p: ["These Terms are governed by the laws of Thailand, and Thai courts will have jurisdiction unless applicable law provides otherwise."],
+            },
+          ],
+        },
+      };
+
+      function detectLang() {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved === "th" || saved === "en") return saved;
+        const langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language]).filter(Boolean);
+        const primary = String(langs[0] || "").toLowerCase();
+        return primary.startsWith("th") ? "th" : "en";
+      }
+
+      function setPressed(lang) {
+        document.getElementById("lang-th").setAttribute("aria-pressed", String(lang === "th"));
+        document.getElementById("lang-en").setAttribute("aria-pressed", String(lang === "en"));
+      }
+
+      function render(lang) {
+        const s = STRINGS[lang];
+        document.documentElement.lang = lang;
+        document.title = lang === "th" ? "ข้อกำหนดและเงื่อนไขการใช้งาน – BuddyHealth" : "Terms & Conditions – BuddyHealth";
+        document.getElementById("ui-subtitle").textContent = s.uiSubtitle;
+        document.getElementById("doc-title").textContent = s.title;
+        document.getElementById("meta-effective").innerHTML = s.metaEffective;
+        document.getElementById("meta-provider").innerHTML = s.metaProvider;
+        document.getElementById("meta-contact").innerHTML = s.metaContact;
+        document.getElementById("footer-note").innerHTML = s.footerNote;
+
+        const ol = document.getElementById("terms");
+        ol.textContent = "";
+        for (const sec of s.sections) {
+          const li = document.createElement("li");
+          const h2 = document.createElement("h2");
+          h2.textContent = sec.h;
+          li.appendChild(h2);
+
+          for (const para of sec.p || []) {
+            const p = document.createElement("p");
+            p.innerHTML = para;
+            li.appendChild(p);
+          }
+
+          if (sec.ul && sec.ul.length) {
+            const ul = document.createElement("ul");
+            for (const item of sec.ul) {
+              const li2 = document.createElement("li");
+              li2.innerHTML = item;
+              ul.appendChild(li2);
+            }
+            li.appendChild(ul);
+          }
+          ol.appendChild(li);
+        }
+
+        setPressed(lang);
+      }
+
+      function setLang(lang) {
+        localStorage.setItem(STORAGE_KEY, lang);
+        render(lang);
+      }
+
+      document.getElementById("lang-th").addEventListener("click", () => setLang("th"));
+      document.getElementById("lang-en").addEventListener("click", () => setLang("en"));
+
+      render(detectLang());
+    </script>
   </body>
 </html>
